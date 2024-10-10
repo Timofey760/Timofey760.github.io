@@ -1,0 +1,44 @@
+body{
+    color:black;
+    background-color: #ADE2AB;
+}
+
+.variant
+{
+    font-size: 20px;
+}
+
+.buttonCheck
+{
+    background-color: #51AC4C;
+    font-size: 25px;
+}
+
+.buttonCheck:hover
+{
+    background-color:#30902B;
+    font-size: 26px;
+
+}
+.score
+{
+    font-size: 25px;
+
+}
+.score:hover
+{
+    color:rgb(0, 255, 38);
+}
+.zag1
+{
+    color:rgb(3, 0, 6);
+}
+.zag2
+{
+    color:black;
+}
+.task
+{
+    font-size: 18px;
+    background-color: #7ECC7A;
+}

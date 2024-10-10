@@ -28,6 +28,7 @@ function startGame() {
     }
     // Выбираем случайную клавишу из списка
     currentKey = listKeys[Math.floor(Math.random() * listKeys.length)];
+    console.log(currentKey);
     fallingKeyElement.textContent = currentKey; // Отображаем клавишу
 
 
@@ -38,7 +39,7 @@ function startGame() {
 
 
 
-    timer = 5; // Сбрасываем таймер на 5 секунд
+    timer = 10; // Сбрасываем таймер на 5 секунд
     timerElement.textContent = timer; // Обновляем отображение таймера
 
 
@@ -64,7 +65,7 @@ function startGame() {
 
         // Перемещаем клавишу вниз на 5 пикселей
         fallingKeyElement.style.top = parseInt(fallingKeyElement.style.top) + 5 + 'px';
-       
+       console.log( fallingKeyElement.style.top)
         // Проверяем, не вышла ли клавиша за пределы контейнера
         if (parseInt(fallingKeyElement.style.top) > 500) {
             alert('Клавиша пропала! Игра окончена.'); // Сообщаем игроку об окончании игры
@@ -101,4 +102,4 @@ document.addEventListener('keydown', OnKeyDown);
 
 
 // Запускаем игру при загрузке скрипта
-startGame();
+//startGame();

@@ -2,7 +2,7 @@
 //глобальнае переменные
 
 
-const listKeys = ['A', 'S', 'D', 'F', 'G'];
+let listKeys = ['A', 'S', 'D', 'F', 'G'];
 let currentKey = ''; // Переменная для текущей падающей клавиши
 let score = 0; // Переменная для хранения очков игрока
 let timer = 5; // Время, отведенное на каждую клавишу
@@ -17,13 +17,27 @@ const scoreElement = document.getElementById('score');
 const timerElement = document.getElementById('timer');
 
 
+function restartGame()
+{
+    listKeys = ['A', 'S', 'D', 'F', 'G'];
+    currentKey = ''; // Переменная для текущей падающей клавиши
+    score = 0; // Переменная для хранения очков игрока
+    timer = 5; // Время, отведенное на каждую клавишу
+    updateScore();
+    document.getElementById('buttonStartGame').disabled=true;
+    startGame();    
+}
 
-
+function updateScore(){
+    scoreElement.textContent = score;
+    
+}
 // Функция для запуска игры
 function startGame() {
     // Проверяем, остались ли клавиши в списке
     if (listKeys.length === 0) {
         alert('Игра окончена! Ваши очки: ' + score);
+        document.getElementById('buttonStartGame').disabled=false;
         return; // Завершаем игру, если клавиши закончились
     }
     // Выбираем случайную клавишу из списка
@@ -57,7 +71,9 @@ function startGame() {
         if (timer <= 0) {
             alert('Время вышло! Игра окончена.'); // Сообщаем игроку об окончании времени
             clearInterval(intervalId); // Останавливаем интервал
+            document.getElementById('buttonStartGame').disabled=false;
             return; // Завершаем выполнение функции
+            
         }
 
 
@@ -82,8 +98,8 @@ function OnKeyDown(event)
         // Проверяем, совпадает ли нажатая клавиша с текущей падающей клавишей
         if (event.key.toUpperCase() === currentKey) {
             score += timer; // Добавляем оставшееся время к очкам
-            scoreElement.textContent = score; // Обновляем отображение очков
-   
+           // scoreElement.textContent = score; // Обновляем отображение очков
+              updateScore();
    
             // Убираем нажатую клавишу из списка, чтобы она больше не появлялась
             listKeys.splice(listKeys.indexOf(currentKey), 1);
@@ -97,6 +113,12 @@ function OnKeyDown(event)
 
 // Обработчик события нажатия клавиши на клавиатуре
 document.addEventListener('keydown', OnKeyDown);
+
+
+//круговой цикл
+for (initializer; exit-condition; final-expression) {
+    // код для выполнения
+  }
 
 
 

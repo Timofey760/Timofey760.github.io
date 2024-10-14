@@ -10,7 +10,7 @@
     <div id="header">
         <h1>Клавиатурный тренажер</h1>
         <h2>Разработчик:Курин Тимофей</h2>
-        <button onclick="startGame()">Старт</button>
+        <button id="buttonStartGame" onclick="restartGame()">Старт</button>
     </div>
     <div class="game-container">
         <div class="falling-key" id="fallingKey"></div>
@@ -18,5 +18,10 @@
         <div class="timer">Осталось времени: <span id="timer">5</span> сек</div>
     </div>
     <script src="script.js"></script>
+    <!--
+    <div class="wrapper">
+        <button id="replay__btn" type="button" name="Старт" onclick='startPlay()'>Старт</button>
+    </div>    
+    -->
 </body>
 </html>
